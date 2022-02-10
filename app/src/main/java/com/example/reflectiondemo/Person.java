@@ -1,12 +1,16 @@
 package com.example.reflectiondemo;
 
-public class Person {
-
+public class Person extends BasePerson{
+    
     public String name;
     private int age;
 
     public Person() {
-
+        try {
+            getClass().getField("url");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public Person(String name) {
